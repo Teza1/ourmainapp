@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Listeners;
+
+use App\Events\OurExampleEvent;
+use Illuminate\Support\Facades\Log;
+
+class OurExampleListener
+{
+    /**
+     * Create the event listener.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Handle the event.
+     *
+     * @param  \App\Events\OurExampleEvent  $event
+     * @return void
+     */
+    public function handle(OurExampleEvent $event)
+    {
+        Log::debug("The user {$event->username} just performed {$event->action}");
+    }
+}
